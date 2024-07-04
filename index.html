@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #90EE90;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .survey-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 800px;
+        }
+        h1 {
+            color: #228B22;
+            margin-top: 0;
+        }
+        p {
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        .form-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .left-column, .right-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-form">
+        <h1>Survey Form</h1>
+        <p>Feel Free To Answer The Questions Below Based On Your Own Experience And Opinion. If You Are Not Convenient In Answering A Particular Question Please Skip It By Answering "No". Every Answer Would Be Very Appreciated. Thank You For Your Time.</p>
+        
+        <form id="survey-form">
+            <div class="form-content">
+                <div class="left-column">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Your Email Address</label>
+                        <input type="email" id="email" placeholder="user@user.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Your Phone Number</label>
+                        <input type="text" id="phone" placeholder="9999999999">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Where Do You Live?</label>
+                        <select id="location">
+                            <option value="">Select</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Age</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="age" value="15-20"> 15-20</label>
+                            <label><input type="radio" name="age" value="20-30"> 20-30</label>
+                            <label><input type="radio" name="age" value="31-40"> 31-40</label>
+                            <label><input type="radio" name="age" value="41-50"> 41-50</label>
+                            <label><input type="radio" name="age" value="prefer-not-to-say"> Prefer not to say</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>How would you rate your proficiency in coding</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="proficiency" value="Beginner"> Beginner</label>
+                            <label><input type="radio" name="proficiency" value="Intermediate" checked> Intermediate</label>
+                            <label><input type="radio" name="proficiency" value="Advance"> Advance</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="right-column">
+                    <div class="form-group">
+                        <label>Have You Ever Appered in any coding contest?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="contest" value="Yes"> Yes</label>
+                            <label><input type="radio" name="contest" value="No" checked> No</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="passion">Discuss what drives your passion for coding and outline your aspirations in the field.</label>
+                        <textarea id="passion" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="challenges">What are some of the challenges you face while coding?</label>
+                        <textarea id="challenges" rows="4"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="data-structures">Please list the Data Structures you have a strong understanding of.</label>
+                        <textarea id="data-structures" rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Form</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('survey-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Form submitted successfully!');
+        });
+    </script>
+</body>
+</html>
